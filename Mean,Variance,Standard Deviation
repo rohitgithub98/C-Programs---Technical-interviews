@@ -1,0 +1,36 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+	int a[50],n,i;
+	float sum=0,m=0,s,v;
+	printf("Enter size : ");
+	scanf("%d",&n);
+	printf("Enter array elements :");
+	for(i=0;i<n;i++)
+	{
+		scanf("%d",&a[i]);
+	}
+	
+	//Calcultion of mean
+	
+for(i=0;i<n;i++)
+{
+	m+=a[i];
+}
+m=m/(float)n;
+
+//Variance
+
+for(i=0;i<n;i++)
+{
+	sum+=pow(a[i]-m,2);
+}
+
+v=sum/(n-1);
+//standard deviation
+s=sqrt(v);
+
+//print all values
+printf("Mean=%.2f\tVariance=%.2f\tStandardDeviation=%.2f",m,v,s);
+}
