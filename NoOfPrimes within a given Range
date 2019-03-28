@@ -1,0 +1,36 @@
+#include<stdio.h>
+int main()
+{
+	int low,high,a[100],n,i,ctr=0,j,flag;
+	printf("Enter The lower limit :");
+	scanf("%d",&low);
+	printf("Enter The upper limit :");
+	scanf("%d",&high);
+while(low<high)
+{
+	flag=0;
+          for(j=2;j<=low/2;j++)
+		{
+			if(low%j==0)
+			{
+				flag=1;
+				break;
+			}
+		} 
+		
+		if(flag==0)
+		{
+			a[ctr]=low;
+			++ctr;
+		}
+		
+		++low;
+		
+	}
+	printf("\n");
+	printf("The number's in the array are :\n");
+	for(i=0;i<ctr;i++)
+	{
+		printf("%d\t",a[i]);
+	}
+}
