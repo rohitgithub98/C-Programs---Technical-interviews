@@ -1,0 +1,14 @@
+int main()
+{	char days[7][4]={"sun","mon","tue","wed","thu","fri","sat"};
+	int dd,mm,yyyy,yy,cc_ind,day_no,day_ind;
+	int monthcode[12]={0,3,3,6,1,4,6,2,5,0,3,5};
+	int centurycode[4]={6,4,2,0};
+	printf("Enter dd-mm-yyyy \n");
+	scanf("%d%d%d",&dd,&mm,&yyyy);
+	cc_ind=(yyyy/100)%4;
+	yy=yyyy%100;
+	day_no = dd + yy + yy/4 + monthcode[mm-1] + centurycode[cc_ind];
+	day_ind=day_no%7;
+	printf("\n Day = %s",days[day_ind]);
+	return 0;
+	}
