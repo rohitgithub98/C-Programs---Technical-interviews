@@ -1,0 +1,20 @@
+#include<stdio.h>
+int main()
+{
+	int i,j,k;
+	printf("The various combinations : \n");
+	for(i=1;i<100;i++)
+	{
+		for(j=1;j<100;j++)
+		{
+			for(k=1;k<100;k++)
+			{
+				if((i*5)+(j*1)+(k*0.25)==100 && i+j+k==100)
+				{
+					printf("\nNo. of jackfruits = %d\nNo. of Bananas =%d\nNo. of oranges=%d\n",i,j,k);
+				}
+			}
+		}
+	}
+	
+}
