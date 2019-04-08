@@ -1,0 +1,67 @@
+#include<stdio.h>
+#include<math.h>
+int stack[20];
+int top = -1;
+
+ void push(int n)
+{
+  stack[++top] = n;
+}
+ 
+int pop()
+{
+        return stack[top--];
+}
+
+int main()
+{
+	char postfix[100];
+	int n1,n2,i,r,num;
+	printf("Enter  expression : \n");
+	gets(postfix);
+	while(postfix[i]!='\0')
+	{
+		if(isdigit(postfix[i])!=0)
+		{
+			num = postfix[i] - 48;
+            push(num);
+		}
+		
+		else
+		{
+			n1=pop();
+			n2=pop();
+			switch(postfix[i])
+			{
+			  case '+': r=n2+n1;
+			  break;
+			  
+			  case '-': r=n2-n1;
+			  break;
+			  
+			  case '*': r=n2*n1;
+			  break;
+			  
+			  case '/': r=n2/n1;
+			  break;
+			  
+			  case '^': r=pow(n2,n1);
+			  break;
+			  
+			  }
+			  
+			  push(r);
+			  
+			}
+			
+			++i;
+			
+		}
+		
+		else
+		{
+	printf("\nThe resutant expression %s  =  %d\n\n",postfix,pop());
+       return 0;
+   }
+	
+}
